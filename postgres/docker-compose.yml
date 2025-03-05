@@ -1,0 +1,11 @@
+version: '27.4.0'
+services:
+  postgres:
+    image: postgres:latest
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: avergard
+      POSTGRES_PASSWORD: Yanelox46
+      POSTGRES_DB: mydb
+    ports:
+      - "5432:5432"
