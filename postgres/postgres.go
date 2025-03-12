@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	connStr := "user=avergard password=Yanelox46 dbname=mydb sslmode=disable"
+	connStr := "user=postgres password=postgres dbname=postgres sslmode=disable port=5434"
 	db, err := sql.Open("postgres", connStr)
 	if err != nil {
 		panic(err)
@@ -19,7 +19,7 @@ func main() {
 		}
 	}(db)
 
-	for i := range 10000000 {
+	for i := range 30000 {
 		_, err := db.Exec("insert into table1 (id, name) values($1, $2)", i, i)
 		if err != nil {
 			fmt.Println(err)
